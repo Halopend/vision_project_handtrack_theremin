@@ -29,11 +29,11 @@ By default, the server should open at: [https://localhost:3000](https://localhos
 Note the page will reload if you make any edits to the code as yarn start by fault wil be a developer mode.<br />
 You will also see any lint errors in the console.
 
-One thing to note is that our app uses webrtc apis to access the camera in the browser. By default, most browsers disable access to camera if the connection insn't encrypted. Even though our app fuly uploads the files necessary to your computer from the server you will be launching, and there is no communication bewteen the server and browser instance (either than initally sending the files which requires back/forth to load in the files) after everything is loaded, this means we need to force our connection through https. We do have node modules included for propper SSL, but you will need to add the the certificates manually in order for the browser to not complain. 
+One thing to note is that our app uses webrtc apis to access the camera in the browser. By default, most browsers disable access to camera if the connection insn't encrypted. Even though there is no communication bewteen the server and browser instance (either than initally sending the files which requires back/forth to load in the files), this limitation means your browser will automatically disable the camera if the file upload isn't encypted. We do have node modules included for propper SSL, but you will need to add the the certificates manually in order for the browser to not complain. 
 
 If you wish to go this route, look at: [https://www.npmjs.com/package/greenlock-cli](https://www.npmjs.com/package/greenlock-cli) for more information.
 
-To more simply just run test without the need for proper certificates, launch chrome using 
+To more simplytest without the need for proper certificates, launch chrome using 
 
 ```code
 chrome –ignore-certificate-errors
